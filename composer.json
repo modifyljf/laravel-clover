@@ -1,0 +1,54 @@
+{
+  "name": "modifyljf/laravel-clover",
+  "description": "Clover APIs PHP(Laravel) Helper Library wrote by Jianfeng Li.",
+  "keywords": [
+    "Clover",
+    "laravel"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/modifyljf/laravel-clover",
+  "support": {
+    "issues": "https://github.com/modifyljf/laravel-clover/issues",
+    "source": "https://github.com/modifyljf/laravel-clover"
+  },
+  "authors": [
+    {
+      "name": "Jianfeng Li",
+      "email": "modifyljf@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "~8.0",
+    "ext-json": "*",
+    "laravel/framework": "~8.0"
+  },
+  "require-dev": {
+    "mockery/mockery": "~0.9",
+    "phpunit/phpunit": "~4.0|~5.0",
+    "fzaninotto/faker": "~1.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "Modifyljf\\Clover\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Modifyljf\\Clover\\Providers\\CloverServiceProvider"
+      ],
+      "aliases": {
+      }
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
