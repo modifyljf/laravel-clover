@@ -1,13 +1,12 @@
 <?php
 
-namespace Modifyljf\Clover;
+namespace Modifyljf\Clover\Http;
 
 use Modifyljf\Clover\Exceptions\CloverException;
-use Modifyljf\Clover\Http\ApiResource;
-use Modifyljf\Clover\Http\EmployeeApi;
-use Modifyljf\Clover\Http\InventoryApi;
-use Modifyljf\Clover\Http\MerchantApi;
-use Modifyljf\Clover\Http\OrderApi;
+use Modifyljf\Clover\Http\Platform\EmployeeApi;
+use Modifyljf\Clover\Http\Platform\InventoryApi;
+use Modifyljf\Clover\Http\Platform\MerchantApi;
+use Modifyljf\Clover\Http\Platform\OrderApi;
 
 /**
  * Class Client

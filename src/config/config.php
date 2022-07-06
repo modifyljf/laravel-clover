@@ -7,7 +7,7 @@ return [
     | Clover Environment.
     |--------------------------------------------------------------------------
     |
-    | Environments: "production", "uat"
+    | Environments: "production", "demo"
     */
     "env" => env("CLOVER_ENV", "production"),
 
@@ -24,4 +24,11 @@ return [
     |--------------------------------------------------------------------------
     */
     "client_secret" => env("CLOVER_CLIENT_SECRET"),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Clover API Token.
+    |--------------------------------------------------------------------------
+    */
+    "pos_id" => env("CLOVER_POS_ID", config('app.name')),
 ];

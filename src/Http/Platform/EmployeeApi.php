@@ -1,18 +1,18 @@
 <?php
 
-namespace Modifyljf\Clover\Http;
+namespace Modifyljf\Clover\Http\Platform;
 
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
+use Modifyljf\Clover\Http\ApiResource;
 
 /**
  * Class EmployeeApi
- * @package Modifyljf\Clover\Http
+ * @package Modifyljf\Clover\Http\Platform
  * @link https://docs.clover.com/reference/api-reference-overview
  */
 class EmployeeApi extends ApiResource
 {
-
     /**
      * Get all employees
      *
@@ -27,6 +27,6 @@ class EmployeeApi extends ApiResource
         $version = $this->client->getVersion();
         $url = $this->client->getBaseUrl() . "/$version/merchants/$mid/employees";
 
-        return Http::withToken($token)->get($url)->throw()->json();
+        return Http::withToken($token)->get($url)->throw()->json(['elements']);
     }
 }

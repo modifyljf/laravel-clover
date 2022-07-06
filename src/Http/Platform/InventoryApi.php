@@ -1,13 +1,14 @@
 <?php
 
-namespace Modifyljf\Clover\Http;
+namespace Modifyljf\Clover\Http\Platform;
 
 use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Facades\Http;
+use Modifyljf\Clover\Http\ApiResource;
 
 /**
  * Class InventoryApi
- * @package Modifyljf\Clover\Http
+ * @package Modifyljf\Clover\Http\Platform
  * @link https://docs.clover.com/reference/api-reference-overview
  */
 class InventoryApi extends ApiResource

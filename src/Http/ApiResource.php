@@ -2,18 +2,16 @@
 
 namespace Modifyljf\Clover\Http;
 
-use Modifyljf\Clover\Client;
-
 /**
  * Class ApiResource
- * @package Modifyljf\Clover\Http
+ * @package Modifyljf\Clover\Http\Platform
  */
 abstract class ApiResource
 {
     /**
      * @var Client
      */
-    protected $client;
+    protected Client $client;
 
     /**
      * @param Client $client used to communicate with clover.

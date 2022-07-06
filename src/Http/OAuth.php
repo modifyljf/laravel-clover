@@ -1,6 +1,6 @@
 <?php
 
-namespace Modifyljf\Clover;
+namespace Modifyljf\Clover\Http;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
