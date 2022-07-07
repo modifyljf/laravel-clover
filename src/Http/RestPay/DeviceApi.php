@@ -24,11 +24,17 @@ class DeviceApi extends ApiResource
     {
         $mid = $this->client->getMerchantId();
         $token = $this->client->getToken();
+
         $deviceId = $this->client->getDeviceId();
         $posId = $this->client->getPosId();
         $version = $this->client->getVersion();
-        $url = $this->client->getBaseUrl() . "/$version/merchants/$mid/employees";
+        $url = $this->client->getBaseUrl() . "/$version/device/printers";
+        $headers = [
+            'X-Clover-Device-Id' => $deviceId,
+            'X-POS-ID' => $posId,
+            'Content-Type' => 'application/json'
+        ];
 
-        return Http::withToken($token)->get($url)->throw()->json(['elements']);
+        return Http::withToken($token)->withHeaders($headers)->post($url, ['' => ''])->throw()->json();
     }
 }

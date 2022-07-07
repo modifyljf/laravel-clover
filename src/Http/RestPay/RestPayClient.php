@@ -1,14 +1,15 @@
 <?php
 
-namespace Modifyljf\Clover\Http;
+namespace Modifyljf\Clover\Http\RestPay;
 
-use Modifyljf\Clover\Http\RestPay\DeviceApi;
+use Modifyljf\Clover\Http\Client;
+use Modifyljf\Clover\Http\Platform\InventoryApi;
 
 /**
- * Class Client
+ * Class RestPayClient
  *
- * @property DeviceApi $merchants
- * @package Modifyljf\Clover
+ * @property DeviceApi $devices
+ * @package Modifyljf\Clover\Http\RestPay
  */
 class RestPayClient extends Client
 {
@@ -30,6 +31,18 @@ class RestPayClient extends Client
     /**
      * @return string
      */
+    public function getBaseUrl(): string
+    {
+        if (!empty($this->baseUrl)) {
+            return $this->baseUrl;
+        } else {
+            return (self::ENV_DEMO == $this->environment ? self::SANDBOX_URL : self::PRODUCTION_URL) . '/connect';
+        }
+    }
+
+    /**
+     * @return string
+     */
     public function getDeviceId(): string
     {
         return $this->deviceId;
@@ -39,7 +52,7 @@ class RestPayClient extends Client
      * @param string $deviceId
      * @return Client
      */
-    public function setDeviceId(string $deviceId): Client
+    public function setDeviceId(string $deviceId): RestPayClient
     {
         $this->deviceId = $deviceId;
         return $this;
@@ -57,9 +70,17 @@ class RestPayClient extends Client
      * @param string $posId
      * @return Client
      */
-    public function setPosId(string $posId): Client
+    public function setPosId(string $posId): RestPayClient
     {
         $this->posId = $posId;
         return $this;
+    }
+
+    /**
+     * @return DeviceApi
+     */
+    public function getDevices(): DeviceApi
+    {
+        return new DeviceApi($this);
     }
 }
